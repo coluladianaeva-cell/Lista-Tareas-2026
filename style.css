@@ -1,0 +1,58 @@
+/* Resset basico */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Propiedades personalizadas */
+
+:root {
+
+  /* Fuentes */
+
+  --font-primary: "Google Sans Flex" , sans-serif; 
+
+  /* Color de fondos */
+  --bg-body: #ffb6c1; 
+  --bg-container: 	#ff62b4;
+  --bg-container-counter: #ff6568; 
+  --bg-task: #bf9cfc; 
+  --bg-task-complete: #fc9fff; 
+
+  /* Color textos */
+  --txt-primary: #af50e5; 
+  --txt-secondary: 	#d980f9; 
+  --txt-counter: #e2cef6; 
+
+  /* Color botones */
+
+  --btn-add:	#9fecf2; 
+  --btn-hide: #edfb80; 
+  --btn-remove: #7590fc; 
+  --btn-add-hover: 	#81b257; 
+  --btn-hide-hover: 	#fd1849; 
+  --btn-remove-hover: 
+  --btn-text: var(--bg-body); 
+  -btn-text-hover: var(--txt-primary);
+
+  /* Color iconos */
+  --icon-color: 	#ff8bc1; 
+  --icon-color-hover: 	#ff007f;
+
+  /* Espacios */
+  --space-lg: 1rem;
+  --space-md: .8rem; 
+  --space-sm: .5rem;
+
+  /* Bordes */
+  --border-radius: 4px;
+  --border-size: 1px;
+  --border-color: #aee6d6; 
+
+}
+
+body {
+  font-family: var(--font-primary);
+}
