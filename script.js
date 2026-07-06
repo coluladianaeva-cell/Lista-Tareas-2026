@@ -3,6 +3,7 @@
 const tareaEntrada = document.getElementById('tarea-entrada');
 const botonAgregar = document.getElementById('boton-agregar');
 const mensaje = document.getElementById('mensaje');
+const contenedorTareas = document.getElementById('contenedor-tareas');
 
 /* Escuchadores */
 
@@ -18,10 +19,12 @@ function agregarTarea() {
   // Evaluar la constante texto
 
   if(texto) {
-    tareaEntrada.value= '';
-    console.log('tarea creada correctamente');
+    const elelememtoTarea =crearElementoTarea();
+    contenedorTareas.appened(elemntoTarea);
+    tareaEntrada.value = '';
+    mensaje.textContent = 'Tarea creada correctamente';
   } else {
-    console.log('no escribiste nada')
+    mensaje.textContent = 'no escribiste nada'
   }
 
 }
@@ -31,12 +34,12 @@ function agregarTarea() {
 tareaEntrada.addEventListener('input', () => {
   //Evaluar si el valor del input esta vacio
 
-  if(tareaEntrada. value.trim()=== '') {
-    mensajeTextContent = 'Escribe tu primera tarea';
+  if( tareaEntrada.value.trim() === '' ) {
+    mensaje.textContent = 'Escribe tu primera tarea';
 } else {
-  mensaje.textContent = 'al finalizar presiona enter'
+  mensaje.textContent = 'al finalizar presiona enter';
 }
- })
+ } )
 
 /* Funcion para crear el elemento tarea */
 
@@ -48,12 +51,26 @@ function crearElementoTarea() {
   const iconoCompletada = document.createElement('i');
   const iconoEliminar = document.createElement('i');
 
+// Crear estructura de la tarea 
 
-  console.log(tareaContenedor);
-  console.log(tareaTexto);
-  console.log(iconosContenedor);
-  console.log(iconoCompletada);
-  console.log(iconoEliminar);
+iconosContenedor.append(iconoCompletada, iconoEliminar);
+tareaContenedor.append(tareaTexto, iconosContenedor);
+
+// Agregar las clases a los elementos
+
+tareaContenedor.classList.add('tarea');
+
+tareaTexto.classList.add('tarea-texto');
+iconosContenedor.classList.add('tareas-iconos');
+iconosCompletada.classList.add('bi', 'bi.check-circle');
+iconoEliminar.classList.add('bi', 'bi-trash2');
+
+// Agregar el texto que escribe el usuario en el input
+
+tareaTexto.innerText = tareaEntrada.value;
+
+//Retornamos la estructura de la tarea 
+return tareaContenedor;
 
 }
 
