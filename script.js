@@ -136,7 +136,7 @@ function ocultarCompletadas() {
 
   tareasOcultas = !tareasOcultas;
 
-
+//Cambiar el texto del boton 
 
   if(tareasOcultas) {
     botonOcultar.textContent = "Mostrar completadas"
@@ -146,17 +146,17 @@ function ocultarCompletadas() {
 
 }
 
-
-
-
-
-
-
-/*  Duncion Eliminar Completadas. Borra las tareas como completadas */
+/* Funcion eliminar completadas. Borra las tareas marcadas como completadas */
 
 function eliminarCompletadas() {
-  console.log("muere")
+  const tareasCompletadas = document.querySelectorAll('.tarea-completada')
+
+  tareasCompletadas.forEach( tarea => tarea.remove())
 }
+
+//Actualizamos los contadores
+actualizarContadores();
+
 
 /* Al presionar la tecla se ejecuta Agregar Tarea */
 
@@ -183,6 +183,7 @@ function actualizarContadores() {
 /* Al inicializar la pagina */
 
 actualizarContadores();
+
 
 
 
